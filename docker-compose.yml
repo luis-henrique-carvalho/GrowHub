@@ -3,7 +3,7 @@ version: '3.8'
 services:
   db:
     image: postgres:16
-    container_name: orca_mais_db
+    container_name: grow_hub_db
     restart: always
     environment:
       POSTGRES_USER: ${POSTGRES_USER}

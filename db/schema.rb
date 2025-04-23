@@ -50,7 +50,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_03_04_181100) do
     t.index ["user_id"], name: "index_categories_on_user_id"
   end
 
-  create_table "orca_mais_dv", id: :bigint, default: nil, force: :cascade do |t|
+  create_table "grow_hub_dv", id: :bigint, default: nil, force: :cascade do |t|
     t.timestamptz "created_at", default: -> { "now()" }, null: false
   end
 

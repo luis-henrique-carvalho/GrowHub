@@ -2,8 +2,8 @@
 # check=error=true
 
 # This Dockerfile is designed for production, not development. Use with Kamal or build'n'run by hand:
-# docker build -t orca_mais_api .
-# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name orca_mais_api orca_mais_api
+# docker build -t grow_hub_api .
+# docker run -d -p 80:80 -e RAILS_MASTER_KEY=<value from config/master.key> --name grow_hub_api grow_hub_api
 
 # For a containerized dev environment, see Dev Containers: https://guides.rubyonrails.org/getting_started_with_devcontainer.html
 
