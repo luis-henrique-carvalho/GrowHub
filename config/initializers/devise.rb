@@ -14,8 +14,18 @@ Devise.setup do |config|
   # confirmation, reset password and unlock tokens in the database.
   # Devise will use the `secret_key_base` as its `secret_key`
   # by default. You can change it below and use your own secret key.
-  # config.secret_key = '0807b2c95f987fd84d06d7e377c932bc65d5bbcb68ef75b4aa0d98d3f80dd82a8272430c0908fe7ddb449bc192aa7c8bbe5df572218e3a556cdd85a74dec2501'
+  # config.secret_key = 'ff18278d148a2a8365d3b3f872af32e6ece2411a4507f7527221430e64b9f0105b43e3b1697acb3551a3f04a5e7d78e4fd81c2d2e81c0eb0dc8be5d9e5f5f64f'
 
+  config.jwt do |jwt|
+    jwt.secret = Rails.application.credentials.devise_jwt_secret_key || ENV.fetch('DEVISE_JWT_SECRET_KEY', nil)
+    jwt.dispatch_requests = [
+      ['POST', %r{^/login$}]
+    ]
+    jwt.revocation_requests = [
+      ['DELETE', %r{^/logout$}]
+    ]
+    jwt.expiration_time = 1.day.to_i
+  end
   # ==> Controller configuration
   # Configure the parent class to the devise controllers.
   # config.parent_controller = 'DeviseController'
@@ -126,7 +136,7 @@ Devise.setup do |config|
   config.stretches = Rails.env.test? ? 1 : 12
 
   # Set up a pepper to generate the hashed password.
-  # config.pepper = 'c6fe1d27585d603d1661707b08b1b9cbc298bc16ac56104cb86c3b203009473043209a1b5ec63c9afff54a7892baacfb921fe0a36fd4195484801c7968d3ef40'
+  # config.pepper = 'f5beeefd3e404f8156b34cf7b57dbc1bca14ea3e9020ca8a040127ffe3f6c0ac132a2b4ec468d49fb6c1ac9d478b0cffa5021b72782de4455373e8d66f78274d'
 
   # Send a notification to the original email when the user's email is changed.
   # config.send_email_changed_notification = false
@@ -263,7 +273,7 @@ Devise.setup do |config|
   # should add them to the navigational formats lists.
   #
   # The "*/*" below is required to match Internet Explorer requests.
-  # config.navigational_formats = ['*/*', :html, :turbo_stream]
+  config.navigational_formats = []
 
   # The default HTTP method used to sign out a resource. Default is :delete.
   config.sign_out_via = :delete
@@ -277,10 +287,10 @@ Devise.setup do |config|
   # If you want to use other strategies, that are not supported by Devise, or
   # change the failure app, you can configure them inside the config.warden block.
   #
-  # config.warden do |manager|
-  #   manager.intercept_401 = false
-  #   manager.default_strategies(scope: :user).unshift :some_external_strategy
-  # end
+
+  config.warden do |manager|
+    manager.scope_defaults :user, store: false
+  end
 
   # ==> Mountable engine configurations
   # When using Devise inside an engine, let's call it `MyEngine`, and this engine

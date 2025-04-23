@@ -1,0 +1,18 @@
+{
+  "title": "User",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "full_name": {
+      "type": "string",
+      "nullable": true
+    },
+    "email": {
+      "type": "string",
+      "nullable": true
+    }
+  }
+}

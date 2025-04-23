@@ -1,15 +1,30 @@
+# frozen_string_literal: true
+
 Rails.application.routes.draw do
-  devise_for :users
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  mount Rswag::Ui::Engine => '/api-docs'
+  mount Rswag::Api::Engine => '/api-docs'
 
-  # Reveal health status on /up that returns 200 if the app boots with no exceptions, otherwise 500.
-  # Can be used by load balancers and uptime monitors to verify that the app is live.
-  get "up" => "rails/health#show", as: :rails_health_check
+  devise_for :users, path: 'api/auth', path_names: {
+    sign_in: :login,
+    sign_out: :logout,
+    registration: :signup
+  }, controllers: {
+    sessions: 'api/auth/sessions',
+    registrations: 'api/auth/registrations'
+  }
 
-  # Render dynamic PWA files from app/views/pwa/* (remember to link manifest in application.html.erb)
-  # get "manifest" => "rails/pwa#manifest", as: :pwa_manifest
-  # get "service-worker" => "rails/pwa#service_worker", as: :pwa_service_worker
+  devise_scope :user do
+    post 'api/auth/refresh-token', to: 'api/auth/sessions#refresh_token'
+  end
 
-  # Defines the root path route ("/")
-  root "welcome#index"
+  namespace :api do
+    namespace :v1 do
+      resources :categories, only: %i[index create]
+      resources :users, only: %i[show update]
+      resources :transactions, only: %i[index create show update destroy]
+      resources :dashboards, only: %i[index]
+    end
+  end
+
+  get 'up' => 'rails/health#show', as: :rails_health_check
 end

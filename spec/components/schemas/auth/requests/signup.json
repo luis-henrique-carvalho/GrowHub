@@ -1,0 +1,25 @@
+{
+    "title": "Create User Request",
+    "type": "object",
+    "properties": {
+        "user": {
+            "type": "object",
+            "properties": {
+                "email": {
+                    "type": "string",
+                    "example": "test@test"
+                },
+                "password": {
+                    "type": "string"
+                },
+                "full_name": {
+                    "type": "string"
+                }
+            },
+            "required": [
+                "email",
+                "password"
+            ]
+        }
+    }
+}

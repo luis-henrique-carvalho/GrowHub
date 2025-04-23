@@ -1,0 +1,32 @@
+{
+    "title": "Create User Response",
+    "type": "object",
+    "properties": {
+        "message": {
+            "type": "string"
+        },
+        "token": {
+            "type": "string"
+        },
+        "refresh_token": {
+            "type": "object",
+            "properties": {
+                "value": {
+                    "type": "string"
+                },
+                "httponly": {
+                    "type": "boolean"
+                },
+                "expires": {
+                    "type": "string"
+                },
+                "secure": {
+                    "type": "boolean"
+                }
+            }
+        },
+        "user": {
+            "$ref": "#/components/schemas/v1/users/_common"
+        }
+    }
+}
