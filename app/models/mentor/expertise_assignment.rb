@@ -22,7 +22,7 @@
 #
 module Mentor
   class ExpertiseAssignment < ApplicationRecord
-    belongs_to :profile, class_name: 'Mentor::Profile'
-    belongs_to :expertise_area, class_name: 'Mentor::ExpertiseArea'
+    belongs_to :mentor_profile, class_name: 'Mentor::Profile', inverse_of: :expertise_assignments
+    belongs_to :mentor_expertise_area, class_name: 'Mentor::ExpertiseArea', inverse_of: :expertise_assignments
   end
 end

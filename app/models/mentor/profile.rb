@@ -26,7 +26,10 @@
 module Mentor
   class Profile < ApplicationRecord
     belongs_to :user
-    has_many :expertise_assignments, class_name: 'Mentor::ExpertiseAssignment', dependent: :destroy
-    has_many :expertise_areas, through: :expertise_assignments, class_name: 'Mentor::ExpertiseArea'
+
+    has_many :expertise_assignments, class_name: 'Mentor::ExpertiseAssignment', dependent: :destroy,
+                                     foreign_key: :mentor_profile_id, inverse_of: :mentor_profile
+    has_many :expertise_areas, through: :expertise_assignments, source: :mentor_expertise_area,
+                               class_name: 'Mentor::ExpertiseArea'
   end
 end

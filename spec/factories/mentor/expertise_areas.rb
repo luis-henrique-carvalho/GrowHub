@@ -15,6 +15,6 @@
 #
 FactoryBot.define do
   factory :mentor_expertise_area, class: 'Mentor::ExpertiseArea' do
-    name { Faker::Job.field }
+    sequence(:name) { |n| "#{Faker::Job.field} #{n * rand(1..1000)}" }
   end
 end
