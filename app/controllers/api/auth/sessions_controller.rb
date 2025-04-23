@@ -26,7 +26,7 @@ module Api
           new_token = Warden::JWTAuth::UserEncoder.new.call(current_user, :user, nil).first
           refresh_token = RefreshTokenGenerator.new(current_user).refresh_token
 
-           render json: {
+          render json: {
             message: 'Token refreshed',
             token: new_token,
             refresh_token: refresh_token
