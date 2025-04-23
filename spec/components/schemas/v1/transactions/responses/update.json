@@ -1,9 +1,0 @@
-{
-  "title": "Transaction Update response",
-  "type": "object",
-  "properties": {
-    "data": {
-      "$ref": "#/components/schemas/v1/transactions/_private"
-    }
-  }
-}
