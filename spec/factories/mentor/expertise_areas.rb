@@ -15,6 +15,6 @@
 #
 FactoryBot.define do
   factory :mentor_expertise_area, class: 'Mentor::ExpertiseArea' do
-    name { 'MyString' }
+    name { Faker::Job.field }
   end
 end

@@ -36,5 +36,8 @@ FactoryBot.define do
     full_name { Faker::Name.name }
     email { Faker::Internet.email }
     password { Faker::Internet.password }
+    cpf { Faker::IdNumber.brazilian_citizen_number }
+    date_of_birth { Faker::Date.birthday(min_age: 18, max_age: 65) }
+    phone { Faker::PhoneNumber.cell_phone_in_e164 }
   end
 end

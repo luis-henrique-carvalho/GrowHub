@@ -22,7 +22,7 @@
 #
 FactoryBot.define do
   factory :mentor_expertise_assignment, class: 'Mentor::ExpertiseAssignment' do
-    mentor_profile { nil }
-    mentor_expertise_area { nil }
+    mentor_profile factory: %i[mentor_profile]
+    mentor_expertise_area factory: %i[mentor_expertise_area]
   end
 end

@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_23_051949) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_23_052851) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -49,6 +49,17 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_23_051949) do
     t.datetime "updated_at", null: false
     t.index ["name", "user_id"], name: "index_categories_on_name_and_user_id", unique: true
     t.index ["user_id"], name: "index_categories_on_user_id"
+  end
+
+  create_table "client_profiles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "user_id", null: false
+    t.string "full_name"
+    t.integer "career_stage", default: 0, null: false
+    t.text "bio"
+    t.string "linkedin_url"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["user_id"], name: "index_client_profiles_on_user_id"
   end
 
   create_table "grow_hub_dv", id: :bigint, default: nil, force: :cascade do |t|
@@ -135,6 +146,7 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_23_051949) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "users"
+  add_foreign_key "client_profiles", "users"
   add_foreign_key "mentor_expertise_assignments", "mentor_expertise_areas"
   add_foreign_key "mentor_expertise_assignments", "mentor_profiles"
   add_foreign_key "mentor_profiles", "users"
