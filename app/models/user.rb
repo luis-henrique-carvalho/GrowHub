@@ -38,8 +38,16 @@ class User < ApplicationRecord
          :recoverable, :rememberable, :validatable, :trackable,
          :jwt_authenticatable, jwt_revocation_strategy: self
 
-  has_many :categories, dependent: :destroy
-  has_many :transactions, dependent: :restrict_with_error
+  has_one :mentor_profile, class_name: 'Mentor::Profile', dependent: :destroy
+  has_one :client_profile, class_name: 'Client::Profile', dependent: :destroy
 
   has_one_attached :avatar
+
+  def mentor?
+    mentor_profile.present?
+  end
+
+  def client?
+    client_profile.present?
+  end
 end
