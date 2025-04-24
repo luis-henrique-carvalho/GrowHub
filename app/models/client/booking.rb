@@ -64,7 +64,7 @@ module Client
 
       return unless is_already_booked
 
-      # TODO: Add I18n translation for this message
+      # TODO: I18n
       errors.add(:mentor_availability_id, :already_confirmed,
                  message: 'Este horário já possui um agendamento confirmado.')
     end
