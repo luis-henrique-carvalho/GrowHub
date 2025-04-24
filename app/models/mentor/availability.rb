@@ -32,7 +32,11 @@ module Mentor
     validate :end_time_must_be_after_start_time
     validate :prevent_overlapping_availabilities
 
-    scope :available, -> { where(booked: [false, nil]) }
+    scope :available, lambda {
+      where.not(
+        id: Client::Booking.confirmed.select(:mentor_availability_id)
+      )
+    }
     scope :upcoming, -> { where('mentor_availabilities.start_time > ?', Time.current) }
     scope :within_range, lambda { |start_range, end_range|
       where(

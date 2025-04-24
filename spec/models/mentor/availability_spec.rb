@@ -67,9 +67,13 @@ RSpec.describe Mentor::Availability, type: :model do
   end
 
   describe 'Scopes' do
-    let!(:available) { create(:mentor_availability, mentor_profile: mentor_profile, booked: false, start_time: 1.day.from_now, end_time: 1.day.from_now + 1.hour) }
-    let!(:booked) { create(:mentor_availability, mentor_profile: mentor_profile, booked: true, start_time: 2.days.from_now, end_time: 2.days.from_now + 1.hour) }
-    let!(:past) { create(:mentor_availability, mentor_profile: mentor_profile, booked: false, start_time: 1.day.ago, end_time: 1.day.ago + 1.hour) }
+    let!(:available) { create(:mentor_availability, mentor_profile: mentor_profile, start_time: 1.day.from_now, end_time: 1.day.from_now + 1.hour) }
+    let!(:booked) { create(:mentor_availability, mentor_profile: mentor_profile, start_time: 2.days.from_now, end_time: 2.days.from_now + 1.hour) }
+    let!(:past) { create(:mentor_availability, mentor_profile: mentor_profile, start_time: 1.day.ago, end_time: 1.day.ago + 1.hour) }
+
+    before do
+      create(:client_booking, :confirmed, mentor_availability: booked)
+    end
 
     describe '.available' do
       it 'includes availabilities that are not booked' do

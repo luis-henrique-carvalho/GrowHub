@@ -28,6 +28,8 @@ class Session < ApplicationRecord
   belongs_to :mentor_profile, class_name: 'Mentor::Profile'
   belongs_to :client_profile, class_name: 'Client::Profile'
 
+  has_one :client_booking, class_name: 'Client::Booking', inverse_of: :session
+
   enum :status, {
     pending: 0,
     completed: 1,
