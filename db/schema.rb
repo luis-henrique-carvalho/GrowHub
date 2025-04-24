@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_23_115150) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_24_025631) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -49,6 +49,21 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_23_115150) do
     t.datetime "updated_at", null: false
     t.index ["name", "user_id"], name: "index_categories_on_name_and_user_id", unique: true
     t.index ["user_id"], name: "index_categories_on_user_id"
+  end
+
+  create_table "client_bookings", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "client_profile_id", null: false
+    t.uuid "mentor_availability_id", null: false
+    t.uuid "session_id"
+    t.integer "status", default: 0, null: false
+    t.text "notes"
+    t.text "cancellation_reason"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_profile_id"], name: "index_client_bookings_on_client_profile_id"
+    t.index ["mentor_availability_id"], name: "index_client_bookings_on_mentor_availability_id"
+    t.index ["mentor_availability_id"], name: "index_client_bookings_on_mentor_availability_id_and_status", unique: true, where: "(status = 1)"
+    t.index ["session_id"], name: "index_client_bookings_on_session_id"
   end
 
   create_table "client_profiles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
@@ -169,6 +184,9 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_23_115150) do
   add_foreign_key "active_storage_attachments", "active_storage_blobs", column: "blob_id"
   add_foreign_key "active_storage_variant_records", "active_storage_blobs", column: "blob_id"
   add_foreign_key "categories", "users"
+  add_foreign_key "client_bookings", "client_profiles"
+  add_foreign_key "client_bookings", "mentor_availabilities"
+  add_foreign_key "client_bookings", "sessions"
   add_foreign_key "client_profiles", "users"
   add_foreign_key "mentor_availabilities", "mentor_profiles"
   add_foreign_key "mentor_expertise_assignments", "mentor_expertise_areas"
