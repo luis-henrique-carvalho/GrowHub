@@ -5,7 +5,7 @@ require 'rails_helper'
 RSpec.describe Mentor::Availability, type: :model do
   let(:mentor_profile) { create(:mentor_profile) }
 
-  describe 'associations' do
+  describe 'Associations' do
     it { is_expected.to belong_to(:mentor_profile).class_name('Mentor::Profile').inverse_of(:availabilities) }
     it { is_expected.to have_many(:bookings).class_name('Client::Booking').dependent(:restrict_with_error) }
   end
@@ -22,6 +22,7 @@ RSpec.describe Mentor::Availability, type: :model do
                              mentor_profile: mentor_profile,
                              start_time: 2.hours.from_now,
                              end_time: 1.hour.from_now)
+
         expect(availability).not_to be_valid
       end
 
@@ -30,6 +31,7 @@ RSpec.describe Mentor::Availability, type: :model do
                              mentor_profile: mentor_profile,
                              start_time: 2.hours.from_now,
                              end_time: 1.hour.from_now)
+
         availability.valid?
         expect(availability.errors[:end_time]).to include('deve ser posterior ao horário de início')
       end
@@ -57,13 +59,14 @@ RSpec.describe Mentor::Availability, type: :model do
                              mentor_profile: mentor_profile,
                              start_time: 1.hour.from_now,
                              end_time: 2.hours.from_now + 1.hour)
+
         availability.valid?
         expect(availability.errors[:base]).to include('Já existe uma disponibilidade cadastrada nesse período')
       end
     end
   end
 
-  describe 'scopes' do
+  describe 'Scopes' do
     let!(:available) { create(:mentor_availability, mentor_profile: mentor_profile, booked: false, start_time: 1.day.from_now, end_time: 1.day.from_now + 1.hour) }
     let!(:booked) { create(:mentor_availability, mentor_profile: mentor_profile, booked: true, start_time: 2.days.from_now, end_time: 2.days.from_now + 1.hour) }
     let!(:past) { create(:mentor_availability, mentor_profile: mentor_profile, booked: false, start_time: 1.day.ago, end_time: 1.day.ago + 1.hour) }
@@ -92,12 +95,14 @@ RSpec.describe Mentor::Availability, type: :model do
       it 'includes availabilities within the given range' do
         range_start = 1.day.from_now
         range_end = 3.days.from_now
+
         expect(described_class.within_range(range_start, range_end)).to include(available, booked)
       end
 
       it 'does not include availabilities outside the given range' do
         range_start = 1.day.from_now
         range_end = 3.days.from_now
+
         expect(described_class.within_range(range_start, range_end)).not_to include(past)
       end
     end
@@ -108,6 +113,7 @@ RSpec.describe Mentor::Availability, type: :model do
       availability = build(:mentor_availability,
                            start_time: Time.current,
                            end_time: 90.minutes.from_now)
+
       expect(availability.duration_in_minutes).to eq(90)
     end
 
