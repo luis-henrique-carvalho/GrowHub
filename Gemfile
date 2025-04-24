@@ -34,6 +34,8 @@ group :development do
   gem 'rubocop-rspec', require: false
   gem 'rubocop-rspec_rails', '~> 2.30'
 
+  gem 'rails-erd'
+
   gem 'annotaterb'
 
   gem 'brakeman', require: false

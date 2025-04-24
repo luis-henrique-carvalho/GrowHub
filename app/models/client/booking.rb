@@ -31,6 +31,7 @@ module Client
   class Booking < ApplicationRecord
     belongs_to :client_profile, class_name: 'Client::Profile'
     belongs_to :mentor_availability, class_name: 'Mentor::Availability'
+
     belongs_to :session, optional: true
 
     enum :status, {

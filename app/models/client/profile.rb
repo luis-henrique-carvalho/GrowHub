@@ -25,7 +25,8 @@ module Client
   class Profile < ApplicationRecord
     belongs_to :user
 
-    has_many :bookings, class_name: 'Client::Booking', dependent: :destroy
+    has_many :bookings, class_name: 'Client::Booking', dependent: :destroy, foreign_key: :client_profile_id,
+                        inverse_of: :client_profile
     has_many :sessions, class_name: 'Session', foreign_key: :client_profile_id,
                         inverse_of: :client_profile, dependent: :destroy
     has_many :mentor_profiles, through: :sessions, source: :mentor_profile, class_name: 'Mentor::Profile'
