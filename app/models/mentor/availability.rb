@@ -30,6 +30,7 @@ module Mentor
 
     validates :start_time, :end_time, presence: true
     validate :end_time_must_be_after_start_time
+    validate :prevent_overlapping_availabilities
 
     scope :available, -> { where(booked: [false, nil]) }
     scope :upcoming, -> { where('mentor_availabilities.start_time > ?', Time.current) }
@@ -72,7 +73,7 @@ module Mentor
       return unless overlapping_slots.exists?
 
       errors.add(:base, :overlapping_availability,
-                 message: 'Já existe um horário de disponibilidade conflitante para este mentor.') # TODO: I18n
+                 message: 'Já existe uma disponibilidade cadastrada nesse período') # TODO: I18n
     end
   end
 end

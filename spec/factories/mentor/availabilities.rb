@@ -23,8 +23,21 @@
 FactoryBot.define do
   factory :mentor_availability, class: 'Mentor::Availability' do
     mentor_profile { association(:mentor_profile) }
-    start_time { Faker::Time.forward(days: 30, period: :morning) }
-    end_time { Faker::Time.forward(days: 30, period: :afternoon) }
+    start_time { 1.day.from_now.beginning_of_hour }
+    end_time { start_time.present? ? start_time + 1.hour : nil }
     booked { false }
+
+    trait :in_past do
+      start_time { 1.day.ago.beginning_of_hour }
+      end_time { start_time.present? ? start_time + 1.hour : nil }
+    end
+
+    trait :booked do
+      booked { true }
+    end
+
+    trait :long_duration do
+      end_time { start_time.present? ? start_time + 3.hours : nil }
+    end
   end
 end

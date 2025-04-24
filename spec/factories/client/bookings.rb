@@ -32,7 +32,7 @@ FactoryBot.define do
     client_profile { association(:client_profile) }
     mentor_availability { association(:mentor_availability) }
     session { association(:session) }
-    status { 1 }
+    status { :pending }
     notes { Faker::Lorem.paragraph }
     cancellation_reason { Faker::Lorem.sentence }
   end
