@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_23_114335) do
+ActiveRecord::Schema[8.0].define(version: 2025_04_23_115150) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -114,6 +114,19 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_23_114335) do
     t.index ["searchable_type", "searchable_id"], name: "index_pg_search_documents_on_searchable"
   end
 
+  create_table "sessions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
+    t.uuid "mentor_profile_id", null: false
+    t.uuid "client_profile_id", null: false
+    t.datetime "scheduled_at"
+    t.integer "duration_minutes"
+    t.string "meeting_url"
+    t.integer "status"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+    t.index ["client_profile_id"], name: "index_sessions_on_client_profile_id"
+    t.index ["mentor_profile_id"], name: "index_sessions_on_mentor_profile_id"
+  end
+
   create_table "transactions", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.string "name", null: false
     t.decimal "amount", precision: 12, scale: 3, null: false
@@ -161,6 +174,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_23_114335) do
   add_foreign_key "mentor_expertise_assignments", "mentor_expertise_areas"
   add_foreign_key "mentor_expertise_assignments", "mentor_profiles"
   add_foreign_key "mentor_profiles", "users"
+  add_foreign_key "sessions", "client_profiles"
+  add_foreign_key "sessions", "mentor_profiles"
   add_foreign_key "transactions", "categories"
   add_foreign_key "transactions", "users"
 end

@@ -42,5 +42,13 @@ FactoryBot.define do
         create_list(:mentor_expertise_assignment, evaluator.expertise_areas_count, mentor_profile: mentor_profile)
       end
     end
+
+    trait :full do
+      after(:build) do |mentor_profile|
+        mentor_profile.expertise_assignments << build_list(:mentor_expertise_assignment, 3)
+        mentor_profile.availabilities << build_list(:mentor_availability, 3)
+        mentor_profile.sessions << build_list(:session, 3)
+      end
+    end
   end
 end

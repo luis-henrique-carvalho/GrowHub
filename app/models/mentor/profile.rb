@@ -32,6 +32,11 @@ module Mentor
     has_many :expertise_areas, through: :expertise_assignments, source: :mentor_expertise_area,
                                class_name: 'Mentor::ExpertiseArea'
 
-    has_many :availabilities, class_name: 'Mentor::Availability', dependent: :destroy
+    has_many :availabilities, class_name: 'Mentor::Availability', dependent: :destroy, foreign_key: :mentor_profile_id,
+                              inverse_of: :mentor_profile
+
+    has_many :sessions, class_name: 'Session', foreign_key: :mentor_profile_id,
+                        inverse_of: :mentor_profile, dependent: :destroy
+    has_many :client_profiles, through: :sessions, source: :client_profile, class_name: 'Client::Profile'
   end
 end
