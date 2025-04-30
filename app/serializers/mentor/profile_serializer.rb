@@ -6,8 +6,8 @@ module Mentor
 
     fields :bio, :headline, :hourly_rate, :linkedin_url, :rating, :years_of_experience
 
-    association :expertise_areas, blueprint: ExpertiseAreaSerializer
-    association :availabilities, blueprint: AvailabilitySerializer
+    association :expertise_areas, blueprint: Mentor::ExpertiseAreaSerializer
+    association :availabilities, blueprint: Mentor::AvailabilitySerializer
 
     view :private do
       association :sessions, blueprint: SessionSerializer
