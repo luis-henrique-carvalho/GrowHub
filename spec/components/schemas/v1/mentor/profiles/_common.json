@@ -1,0 +1,33 @@
+{
+  "title": "Mentor Profile",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "bio": {
+      "type": "string",
+      "nullable": true
+    },
+    "career_stage": {
+      "type": "string"
+    },
+    "full_name": {
+      "type": "string"
+    },
+    "linkedin_url": {
+      "type": "string",
+      "nullable": true
+    },
+    "expertise_areas": {
+      "$ref": "#/components/schemas/v1/mentor/availabilities/_common.json"
+    },
+    "availabilities": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/v1/mentor/availabilities/_common.json"
+      }
+    }
+  }
+}

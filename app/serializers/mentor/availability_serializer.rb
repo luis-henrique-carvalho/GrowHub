@@ -4,7 +4,7 @@ module Mentor
   class AvailabilitySerializer < ApplicationSerializer
     identifier :id
 
-    fields :id, :mentor_id, :start_time, :end_time
+    fields :id, :start_time, :end_time
 
     attribute :duration_in_minutes do
       object.duration_in_minutes

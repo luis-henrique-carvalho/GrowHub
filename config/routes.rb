@@ -20,7 +20,7 @@ Rails.application.routes.draw do
   namespace :api do
     namespace :v1 do
       namespace :mentor do
-        resources :profiles
+        resources :profiles, only: %i[show update]
       end
       resources :categories, only: %i[index create]
       resources :users, only: %i[show update]

@@ -1,0 +1,13 @@
+{
+  "title": "Mentor ExpertiseArea",
+  "type": "object",
+  "additionalProperties": true,
+  "properties": {
+    "id": {
+      "type": "string"
+    },
+    "name": {
+      "type": "string"
+    }
+  }
+}
