@@ -39,5 +39,13 @@ FactoryBot.define do
     cpf { Faker::IdNumber.brazilian_citizen_number }
     date_of_birth { Faker::Date.birthday(min_age: 18, max_age: 65) }
     phone { Faker::PhoneNumber.cell_phone_in_e164 }
+
+    trait :mentor do
+      mentor_profile { association :mentor_profile }
+    end
+
+    trait :client do
+      client_profile { association :client_profile }
+    end
   end
 end

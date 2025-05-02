@@ -17,7 +17,7 @@ Rails.application.routes.draw do
     post 'api/auth/refresh-token', to: 'api/auth/sessions#refresh_token'
   end
 
-  namespace :api do
+  scope :api, defaults: { format: :json }, module: :api do
     namespace :v1 do
       namespace :mentor do
         resources :profiles, only: %i[show update]

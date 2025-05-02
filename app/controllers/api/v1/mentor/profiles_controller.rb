@@ -4,7 +4,7 @@ module Api
   module V1
     module Mentor
       class ProfilesController < ApiController
-        before_action :set_user, only: %i[show update]
+        before_action :set_profile, only: %i[show update]
         before_action :authenticate_user!, only: %i[show update]
 
         def show
@@ -17,10 +17,15 @@ module Api
           end
         end
 
+        def update
+          # Implementação da action update (se necessário)
+        end
+
         private
 
         def set_profile
-          @mentor_profile = Mentor::Profile.find(params[:id])
+          debugger
+          @mentor_profile = ::Mentor::Profile.find(params[:id])
         end
       end
     end

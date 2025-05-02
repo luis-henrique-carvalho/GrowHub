@@ -2,8 +2,8 @@
 
 require 'rails_helper'
 
-RSpec.describe 'Api::V1::Profiles', type: :request do
-  let(:current_user) { create(:user) }
+RSpec.describe 'Api::V1::Mentor::Profiles', type: :request do
+  let(:current_user) { create(:user, :mentor) }
 
   path '/api/v1/mentor/profiles/{id}' do
     get 'Show Mentor Profile', params: { use_as_request_example: true } do
@@ -12,7 +12,7 @@ RSpec.describe 'Api::V1::Profiles', type: :request do
       consumes 'application/json'
       parameter name: :id, in: :path, type: :string
 
-      let(:id) { current_user.id }
+      let(:id) { current_user.mentor_profile.id }
       let(:Authorization) { authenticated_header({}, current_user)['Authorization'] }
 
       generate_response_examples
