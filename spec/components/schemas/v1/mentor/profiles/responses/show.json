@@ -3,7 +3,7 @@
   "type": "object",
   "properties": {
     "data": {
-      "$ref": "#/components/schemas/v1/users/_private"
+      "$ref": "#/components/schemas/v1/mentor/profiles/_private"
     }
   },
   "required": [

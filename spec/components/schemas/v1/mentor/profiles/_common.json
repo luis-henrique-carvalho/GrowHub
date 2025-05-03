@@ -7,26 +7,43 @@
       "type": "string"
     },
     "bio": {
+      "type": "string"
+    },
+    "headline": {
       "type": "string",
       "nullable": true
     },
-    "career_stage": {
-      "type": "string"
-    },
-    "full_name": {
-      "type": "string"
+    "hourly_rate": {
+      "type": "string",
+      "nullable": true
     },
     "linkedin_url": {
       "type": "string",
       "nullable": true
     },
+    "profile_name": {
+      "type": "string",
+      "nullable": true
+    },
+    "rating": {
+      "type": "number",
+      "format": "float",
+      "nullable": true
+    },
+    "years_of_experience": {
+      "type": "integer",
+      "nullable": true
+    },
     "expertise_areas": {
-      "$ref": "#/components/schemas/v1/mentor/availabilities/_common.json"
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/v1/mentor/expertise_areas/_common"
+      }
     },
     "availabilities": {
       "type": "array",
       "items": {
-        "$ref": "#/components/schemas/v1/mentor/availabilities/_common.json"
+        "$ref": "#/components/schemas/v1/mentor/availabilities/_common"
       }
     }
   }

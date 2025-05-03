@@ -1,21 +1,24 @@
 {
-  "title": "User Private",
+  "title": "Mentor Profile Private",
   "type": "object",
   "additionalProperties": true,
+  "allOf": [
+    {
+      "$ref": "#/components/schemas/v1/mentor/profiles/_common"
+    }
+  ],
   "properties": {
-    "id": {
-      "type": "string"
+    "sessions": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/v1/mentor/session"
+      }
     },
-    "full_name": {
-      "type": "string"
-    },
-    "email": {
-      "type": "string",
-      "nullable": true
-    },
-    "cpf": {
-      "type": "string",
-      "nullable": true
+    "client_profiles": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/v1/mentor/profiles/_common"
+      }
     }
   }
 }
