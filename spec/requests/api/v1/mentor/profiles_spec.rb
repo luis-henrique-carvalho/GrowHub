@@ -25,7 +25,6 @@ RSpec.describe 'Api::V1::Mentor::Profiles', type: :request do
 
       response 401, 'Unauthorized' do
         let(:Authorization) { nil }
-        let(:id) { create(:user).id }
 
         it 'returns correct error message' do
           expect_error('auth', 'unauthenticated', message_key_type: 'devise.failure')
@@ -38,7 +37,7 @@ RSpec.describe 'Api::V1::Mentor::Profiles', type: :request do
         let(:id) { 'not_an_id' }
 
         it 'returns correct error message' do
-          expect_error('base', 'active_record.record_not_found', options: { model: 'User', id: 'not_an_id' })
+          expect_error('base', 'active_record.record_not_found', options: { model: 'Mentor::Profile', id: 'not_an_id' })
         end
 
         run_test!

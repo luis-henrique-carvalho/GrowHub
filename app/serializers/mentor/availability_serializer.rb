@@ -6,22 +6,18 @@ module Mentor
 
     fields :id, :start_time, :end_time
 
-    attribute :duration_in_minutes do
-      object.duration_in_minutes
-    end
+    field :duration_in_minutes, &:duration_in_minutes
 
-    attribute :available do
-      object.available?
-    end
+    field :available, &:available?
 
     view :private do
-      associations :mentor_profile, blueprint: Mentor::ProfileSerializer
+      association :mentor_profile, blueprint: Mentor::ProfileSerializer
     end
 
     view :full do
       include_view :private
 
-      associations :bookings, blueprint: Client::BookingSerializer
+      association :bookings, blueprint: ::Client::BookingSerializer
     end
   end
 end

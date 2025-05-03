@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Mentor
-  module Profile
+  module Profiles
     class Show < ApplicationOperation
       def call(model)
         success model

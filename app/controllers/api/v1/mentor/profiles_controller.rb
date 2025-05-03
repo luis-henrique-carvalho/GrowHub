@@ -8,7 +8,7 @@ module Api
         before_action :authenticate_user!, only: %i[show update]
 
         def show
-          result = ::Mentor::Profile::Show.call(params: mentor_profile)
+          result = ::Mentor::Profiles::Show.call(params: @mentor_profile)
 
           if result.success?
             render json: ::Mentor::ProfileSerializer.render(result.payload, view: :private, root: :data)
@@ -24,7 +24,6 @@ module Api
         private
 
         def set_profile
-          debugger
           @mentor_profile = ::Mentor::Profile.find(params[:id])
         end
       end

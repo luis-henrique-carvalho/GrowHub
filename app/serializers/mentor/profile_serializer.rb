@@ -11,7 +11,7 @@ module Mentor
 
     view :private do
       association :sessions, blueprint: SessionSerializer
-      association :client_profiles, blueprint: ClientProfileSerializer
+      association :client_profiles, blueprint: Client::ProfileSerializer
     end
   end
 end

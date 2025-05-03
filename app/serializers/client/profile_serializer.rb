@@ -1,7 +1,7 @@
 # frozen_string_literal: true
 
 module Client
-  class ClientProfileSerializer < ApplicationSerializer
+  class ProfileSerializer < ApplicationSerializer
     identifier :id
 
     fields :bio, :career_stage, :full_name, :linkedin_url
