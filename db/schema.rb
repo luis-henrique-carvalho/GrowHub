@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema[8.0].define(version: 2025_04_24_025631) do
+ActiveRecord::Schema[8.0].define(version: 2025_05_03_025601) do
   # These are extensions that must be enabled in order to support this database
   enable_extension "pg_catalog.plpgsql"
 
@@ -68,12 +68,13 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_24_025631) do
 
   create_table "client_profiles", id: :uuid, default: -> { "gen_random_uuid()" }, force: :cascade do |t|
     t.uuid "user_id", null: false
-    t.string "full_name"
+    t.string "profile_name"
     t.integer "career_stage", default: 0, null: false
     t.text "bio"
     t.string "linkedin_url"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.index ["profile_name"], name: "index_client_profiles_on_profile_name"
     t.index ["user_id"], name: "index_client_profiles_on_user_id"
   end
 
@@ -117,6 +118,8 @@ ActiveRecord::Schema[8.0].define(version: 2025_04_24_025631) do
     t.float "rating"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
+    t.string "profile_name"
+    t.index ["profile_name"], name: "index_mentor_profiles_on_profile_name"
     t.index ["user_id"], name: "index_mentor_profiles_on_user_id"
   end
 

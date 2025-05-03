@@ -18,7 +18,7 @@ RSpec.describe 'Api::V1::Mentor::Profiles', type: :request do
       generate_response_examples
 
       response 200, 'Successful' do
-        schema '$ref': '#/components/schemas/v1/profiles/responses/show'
+        schema '$ref': '#/components/schemas/v1/mentor/profiles/responses/show'
 
         run_test!
       end

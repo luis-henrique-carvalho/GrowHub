@@ -9,6 +9,7 @@
 #  headline            :string
 #  hourly_rate         :decimal(, )
 #  linkedin_url        :string
+#  profile_name        :string
 #  rating              :float
 #  years_of_experience :integer
 #  created_at          :datetime         not null
@@ -17,7 +18,8 @@
 #
 # Indexes
 #
-#  index_mentor_profiles_on_user_id  (user_id)
+#  index_mentor_profiles_on_profile_name  (profile_name)
+#  index_mentor_profiles_on_user_id       (user_id)
 #
 # Foreign Keys
 #
