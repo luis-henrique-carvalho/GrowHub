@@ -9,6 +9,7 @@
 #  headline            :string
 #  hourly_rate         :decimal(, )
 #  linkedin_url        :string
+#  TODO: Add not null in profile_name
 #  profile_name        :string
 #  rating              :float
 #  years_of_experience :integer

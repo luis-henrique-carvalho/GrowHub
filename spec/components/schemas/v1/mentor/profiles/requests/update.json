@@ -1,24 +1,41 @@
 {
-  "title": "Update User Request",
+  "title": "Update Mentor Profile Request",
   "type": "object",
   "properties": {
-    "user": {
+    "mentor_profile": {
       "type": "object",
       "properties": {
-        "full_name": {
-          "type": "string"
-        },
-        "cpf": {
+        "bio": {
           "type": "string",
           "nullable": true
         },
-        "email": {
+        "headline": {
+          "type": "string",
+          "nullable": true
+        },
+        "hourly_rate": {
+          "type": "string",
+          "nullable": true
+        },
+        "linkedin_url": {
+          "type": "string",
+          "nullable": true
+        },
+        "profile_name": {
+          "type": "string",
+          "nullable": true
+        },
+        "rating": {
+          "type": "number",
+          "nullable": true
+        },
+        "years_of_experience": {
           "type": "string",
           "nullable": true
         }
       },
       "required": [
-        "user"
+        "mentor_profile"
       ]
     }
   }

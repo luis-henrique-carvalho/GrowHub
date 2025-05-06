@@ -18,13 +18,23 @@ module Api
         end
 
         def update
-          # Implementação da action update (se necessário)
+          result = ::Mentor::Profiles::Update.call(params: update_params, current_user:)
+
+          if result.success?
+            render json: ::Mentor::ProfileSerializer.render(result.payload, view: :private, root: :data)
+          else
+            render_errors(result.error, status: result.status)
+          end
         end
 
         private
 
         def set_profile
           @mentor_profile = ::Mentor::Profile.find(params[:id])
+        end
+
+        def update_params
+          params_with_id(params.require(:mentor_profile))
         end
       end
     end

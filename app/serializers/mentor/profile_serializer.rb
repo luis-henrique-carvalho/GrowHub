@@ -31,11 +31,6 @@ module Mentor
 
     fields :bio, :headline, :hourly_rate, :linkedin_url, :rating, :years_of_experience, :profile_name
 
-    # Ensure hourly_rate is serialized as a float (not string)
-    field :hourly_rate do |object|
-      object.hourly_rate
-    end
-
     association :expertise_areas, blueprint: Mentor::ExpertiseAreaSerializer
     association :availabilities, blueprint: Mentor::AvailabilitySerializer
 
