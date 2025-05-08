@@ -7,7 +7,7 @@ RSpec.describe 'Api::V1::Mentor::Profiles', type: :request do
 
   path '/api/v1/mentor/profiles/{id}' do
     get 'Show Mentor Profile', params: { use_as_request_example: true } do
-      tags 'Profiles'
+      tags 'Mentor Profiles'
       security [bearer_auth: []]
       consumes 'application/json'
       parameter name: :id, in: :path, type: :string

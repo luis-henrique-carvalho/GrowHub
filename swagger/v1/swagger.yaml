@@ -19,21 +19,21 @@ paths:
                 Default:
                   value:
                     message: Logged in successfully.
-                    token: eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI5ODQ1YWVkMi1hM2MxLTQxMTYtODI4YS1mOGRhMTk1NTllZDIiLCJzdWIiOiJmNGFjZjYzYy00ODNiLTQ3NmYtOTU5Yy00Yzc3ZjNjMzgwZmMiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3NDY2NzE5MzEsImV4cCI6MTc0Njc1ODMzMX0.ZkYRz4QIfBFAiH05zwBVtron8xsrGonG38V-9d1kNAY
+                    token: eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI5ZjdhNGE3OC1iMDE0LTQ0ZTUtYjExOC1lYWEwNTYwNjExZmEiLCJzdWIiOiJjZjg2NGE5NC0xMmYwLTRiYmUtYTE2ZC1hNDBhNTI5NmIyMjgiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3NDY2NzIyNTAsImV4cCI6MTc0Njc1ODY1MH0.HLYoKSgdPr_em25WRHz7aQ1cOf8Y9VBzFX4u9hH2ouo
                     refresh_token:
-                      value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJmNGFjZjYzYy00ODNiLTQ3NmYtOTU5Yy00Yzc3ZjNjMzgwZmMiLCJqdGkiOiI5ODQ1YWVkMi1hM2MxLTQxMTYtODI4YS1mOGRhMTk1NTllZDIifQ.aNrvTYTqt2N8NP9C0dumo0kd4KWBTheb9h8icbQENqU
+                      value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZjg2NGE5NC0xMmYwLTRiYmUtYTE2ZC1hNDBhNTI5NmIyMjgiLCJqdGkiOiI5ZjdhNGE3OC1iMDE0LTQ0ZTUtYjExOC1lYWEwNTYwNjExZmEifQ.8tFmFkrpcqMJe0u92m2FOCT1T5ekS0D4WTXsRGdEHoM
                       httponly: true
-                      expires: '2025-05-09T02:38:51.684Z'
+                      expires: '2025-05-09T02:44:10.156Z'
                       secure: false
                     user:
-                      id: f4acf63c-483b-476f-959c-4c77f3c380fc
+                      id: cf864a94-12f0-4bbe-a16d-a40a5296b228
                       avatar:
                         id: 
                         attachment_id: 
                         content_type: 
                         url: 
                       email: test@test
-                      full_name: Timika Herzog
+                      full_name: Doria Schroeder
       requestBody:
         content:
           application/json:
@@ -54,9 +54,9 @@ paths:
                 Default:
                   value:
                     message: Signed up successfully.
-                    token: eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxMTZiZDJkMC00YTI5LTQ1ZDUtOTIxZC00NmQyZmI1Yzg2MmYiLCJzdWIiOiI1MDdlNzcyNi0xNzJmLTRmOTctYmFjMS0wZThjOWZkMjI2OGIiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3NDY2NzE5MzEsImV4cCI6MTc0Njc1ODMzMX0.s5xUYh19fTYm7e5gmv7az17IXu50eC2FMI8moHtb6BU
+                    token: eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmZDYzNGVjYS0zMTJkLTRjZmItOWQ0ZS03ZjBhZDMyNTE2NTMiLCJzdWIiOiJkNzJhMTdkNi03OWNjLTQzMDAtYjBhMC1mODQzNDViNTllNWYiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3NDY2NzIyNTAsImV4cCI6MTc0Njc1ODY1MH0.Na9_jqgj4e6Hy-cJ2CKlojSPehchZnG-Dp1tp4n0aec
                     user:
-                      id: 507e7726-172f-4f97-bac1-0e8c9fd2268b
+                      id: d72a17d6-79cc-4300-b0a0-f84345b59e5f
                       avatar:
                         id: 
                         attachment_id: 
@@ -65,9 +65,9 @@ paths:
                       email: teste@teste
                       full_name: 
                     refresh_token:
-                      value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1MDdlNzcyNi0xNzJmLTRmOTctYmFjMS0wZThjOWZkMjI2OGIiLCJqdGkiOiIxMTZiZDJkMC00YTI5LTQ1ZDUtOTIxZC00NmQyZmI1Yzg2MmYifQ.cE3u3CQqiPipCg-KFNYAGyn-6VMwjz9OVSINvfYXiA0
+                      value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkNzJhMTdkNi03OWNjLTQzMDAtYjBhMC1mODQzNDViNTllNWYiLCJqdGkiOiJmZDYzNGVjYS0zMTJkLTRjZmItOWQ0ZS03ZjBhZDMyNTE2NTMifQ.L4ZOWN-IujTjvMwA4PM1wVQfxwB1PQsRwp3RlXWKeGU
                       httponly: true
-                      expires: '2025-05-09T02:38:51.728Z'
+                      expires: '2025-05-09T02:44:10.201Z'
                       secure: false
       requestBody:
         content:
@@ -88,7 +88,7 @@ paths:
     get:
       summary: Show Mentor Profile
       tags:
-      - Profiles
+      - Mentor Profiles
       security:
       - bearer_auth: []
       parameters:
@@ -106,18 +106,19 @@ paths:
                 Default:
                   value:
                     data:
-                      id: e80ac8fd-1437-41f6-9c90-2dc340ebd02e
+                      id: 64e9dee6-2da2-4da4-a791-bce4f7a5d38e
                       availabilities: []
-                      bio: Saepe facere minima. Assumenda qui at. Animi nihil suscipit.
+                      bio: Porro dignissimos ipsa. Sit consequatur corrupti. Alias
+                        nihil ratione.
                       client_profiles: []
                       expertise_areas: []
-                      headline: Education Administrator
-                      hourly_rate: '57.28'
-                      linkedin_url: http://linkedin.com/guadalupe
+                      headline: Principal Orchestrator
+                      hourly_rate: '39.92'
+                      linkedin_url: http://linkedin.com/kristen_smitham
                       profile_name: 
-                      rating: 0.78
+                      rating: 7.99
                       sessions: []
-                      years_of_experience: 10
+                      years_of_experience: 9
         '401':
           description: Unauthorized
           content:
@@ -137,7 +138,7 @@ paths:
                     errors:
                       base:
                       - Couldn't find Mentor::Profile with 'id'=not_an_id
-                    request_id: 14059ec8-0bfa-40a6-9470-594b9f8ca891
+                    request_id: 2acafa42-cb64-412c-a8fa-0a90862fe0c4
     put:
       summary: Update Mentor Profile
       tags:
@@ -159,7 +160,7 @@ paths:
                 Default:
                   value:
                     data:
-                      id: 3d86995f-25b8-4ba1-8d13-e02484e02749
+                      id: 5d89ad27-6e42-46b8-a295-5d69ccb448d0
                       availabilities: []
                       bio: Updated Bio
                       client_profiles: []
@@ -207,15 +208,15 @@ paths:
                 Default:
                   value:
                     data:
-                      id: dad93ee8-827d-445b-8cdb-6dd98a4503d1
+                      id: 4e286ecf-3ddc-45b1-9a0a-32b231665707
                       avatar:
                         id: 
                         attachment_id: 
                         content_type: 
                         url: 
-                      cpf: '05271249077'
-                      email: cori.weber@nikolaus-kris.test
-                      full_name: Jesus Hilpert
+                      cpf: '04530730263'
+                      email: jacquelyne.grady@legros.test
+                      full_name: Cristine Ruecker
         '401':
           description: Unauthorized
           content:
@@ -235,7 +236,7 @@ paths:
                     errors:
                       base:
                       - Couldn't find User with 'id'=not_an_id
-                    request_id: 7dc59e05-16aa-4845-b204-4ac7f8a2cec6
+                    request_id: 755f18c4-4370-4c12-ba05-38d57c3eb76a
     put:
       summary: Update User
       tags:
@@ -257,7 +258,7 @@ paths:
                 Default:
                   value:
                     data:
-                      id: 16f5c405-3078-4c3f-9ec2-e0369246e354
+                      id: 1a25520a-fcf7-4015-9b4b-4e8cce254c6b
                       avatar:
                         id: 
                         attachment_id: 
@@ -276,7 +277,7 @@ paths:
                     errors:
                       email:
                       - is invalid
-                    request_id: c028304b-161f-4515-bec4-9655be4d0b4b
+                    request_id: 4677a2e7-bf72-430b-8df3-3c8708a9db09
         '401':
           description: Unauthorized
           content:
@@ -296,7 +297,7 @@ paths:
                     errors:
                       base:
                       - Couldn't find User with 'id'=not_an_id
-                    request_id: d377bb94-66a5-4e88-9f09-64f1e3226841
+                    request_id: 1c6437dd-0a1c-49ed-97e8-790dd4811a81
       requestBody:
         content:
           application/json:
