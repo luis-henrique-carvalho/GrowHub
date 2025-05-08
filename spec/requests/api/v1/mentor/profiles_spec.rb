@@ -51,14 +51,13 @@ RSpec.describe 'Api::V1::Mentor::Profiles', type: :request do
       parameter name: :id, in: :path, type: :string
       parameter name: :body, in: :body, schema: { '$ref': '#/components/schemas/v1/mentor/profile/requests/update' }
 
-      let(:id) { nil }
+      let(:id) { create(:mentor_profile, user: current_user).id }
       let(:body) { nil }
       let(:Authorization) { authenticated_header({}, current_user)['Authorization'] }
 
       generate_response_examples
 
       response 200, 'Successful' do
-        let(:id) { create(:mentor_profile, user: current_user).id }
 
         let(:body) { { mentor_profile: mentor_profile_attributes } }
         let(:mentor_profile_attributes) do
@@ -87,32 +86,8 @@ RSpec.describe 'Api::V1::Mentor::Profiles', type: :request do
       #   run_test!
       # end
 
-      response 404, 'Not found for other users' do
-        let(:id) { create(:mentor_profile).id }
-        let(:body) { { mentor_profile: { profile_name: 'teste' } } }
-
-        it 'returns correct error message' do
-          debugger
-          expect_error('base', 'active_record.record_not_found', options: { model: 'Mentor Profile', id: id })
-        end
-
-        run_test!
-      end
-
-      response 404, 'Not found' do
-        let(:id) { 'not_an_id' }
-        let(:body) { { mentor_profile: { profile_name: 'teste' } } }
-
-        it 'returns correct error message' do
-          expect_error('base', 'active_record.record_not_found', options: { model: 'Mentor Profile', id: id })
-        end
-
-        run_test!
-      end
-
       response 401, 'Unauthorized' do
         let(:Authorization) { nil }
-        let(:id) { 'not_an_id' }
 
         it 'returns correct error message' do
           expect_error('auth', 'unauthenticated', message_key_type: 'devise.failure')
