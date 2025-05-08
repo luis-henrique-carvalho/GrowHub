@@ -1,5 +1,5 @@
 {
-  "title": "Show Mentor Profile Response",
+  "title": "Update Mentor Profile Response",
   "type": "object",
   "properties": {
     "data": {
