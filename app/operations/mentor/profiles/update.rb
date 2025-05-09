@@ -21,7 +21,7 @@ module Mentor
 
       def restrict_safe_params
         @safe_params = @params.permit(:bio, :headline, :hourly_rate, :linkedin_url, :profile_name, :rating,
-                                 :years_of_experience)
+                                      :years_of_experience)
       end
 
       def update_model

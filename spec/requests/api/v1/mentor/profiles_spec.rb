@@ -58,7 +58,6 @@ RSpec.describe 'Api::V1::Mentor::Profiles', type: :request do
       generate_response_examples
 
       response 200, 'Successful' do
-
         let(:body) { { mentor_profile: mentor_profile_attributes } }
         let(:mentor_profile_attributes) do
           { bio: 'Updated Bio', headline: 'Updated Headline', hourly_rate: 50.0,

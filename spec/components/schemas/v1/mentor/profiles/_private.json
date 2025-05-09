@@ -11,7 +11,7 @@
     "sessions": {
       "type": "array",
       "items": {
-        "$ref": "#/components/schemas/v1/mentor/session"
+        "$ref": "#/components/schemas/v1/mentor/session/_common"
       }
     },
     "client_profiles": {

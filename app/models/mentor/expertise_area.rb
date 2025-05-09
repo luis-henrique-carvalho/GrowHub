@@ -15,9 +15,15 @@
 #
 module Mentor
   class ExpertiseArea < ApplicationRecord
+    include PgSearch::Model
+
     has_many :expertise_assignments, class_name: 'Mentor::ExpertiseAssignment', dependent: :destroy,
                                      foreign_key: :mentor_expertise_area_id, inverse_of: :mentor_expertise_area
     has_many :profiles, through: :expertise_assignments, class_name: 'Mentor::Profile'
     has_many :users, through: :profiles
+
+    pg_search_scope :search, against: :name, using: {
+      tsearch: { prefix: true }
+    }
   end
 end

@@ -21,6 +21,7 @@ Rails.application.routes.draw do
     namespace :v1 do
       namespace :mentor do
         resources :profiles, only: %i[show update]
+        resources :expertise_areas, only: %i[index]
       end
       resources :categories, only: %i[index create]
       resources :users, only: %i[show update]

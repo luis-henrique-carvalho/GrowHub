@@ -19,21 +19,21 @@ paths:
                 Default:
                   value:
                     message: Logged in successfully.
-                    token: eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiI5ZjdhNGE3OC1iMDE0LTQ0ZTUtYjExOC1lYWEwNTYwNjExZmEiLCJzdWIiOiJjZjg2NGE5NC0xMmYwLTRiYmUtYTE2ZC1hNDBhNTI5NmIyMjgiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3NDY2NzIyNTAsImV4cCI6MTc0Njc1ODY1MH0.HLYoKSgdPr_em25WRHz7aQ1cOf8Y9VBzFX4u9hH2ouo
+                    token: eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiIxYjhjZmQ0Ny05MGYzLTQzNmUtOTE3OC02ZmI2MDdiMzQ1ZGMiLCJzdWIiOiI1OThmY2Y5NC1kMDcyLTQxNjgtODYyZS0xNjEyODMyYTExZDkiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3NDY3NTUyNzgsImV4cCI6MTc0Njg0MTY3OH0.3XOhPzcnk3vaXvLiWvfSx-XkR3SNkYRAVOBWKK8pMcE
                     refresh_token:
-                      value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJjZjg2NGE5NC0xMmYwLTRiYmUtYTE2ZC1hNDBhNTI5NmIyMjgiLCJqdGkiOiI5ZjdhNGE3OC1iMDE0LTQ0ZTUtYjExOC1lYWEwNTYwNjExZmEifQ.8tFmFkrpcqMJe0u92m2FOCT1T5ekS0D4WTXsRGdEHoM
+                      value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiI1OThmY2Y5NC1kMDcyLTQxNjgtODYyZS0xNjEyODMyYTExZDkiLCJqdGkiOiIxYjhjZmQ0Ny05MGYzLTQzNmUtOTE3OC02ZmI2MDdiMzQ1ZGMifQ.zRhGigV14k34u9itoq3TgQ0wipfeTcTtgacG9HoopZs
                       httponly: true
-                      expires: '2025-05-09T02:44:10.156Z'
+                      expires: '2025-05-10T01:47:58.759Z'
                       secure: false
                     user:
-                      id: cf864a94-12f0-4bbe-a16d-a40a5296b228
+                      id: 598fcf94-d072-4168-862e-1612832a11d9
                       avatar:
                         id: 
                         attachment_id: 
                         content_type: 
                         url: 
                       email: test@test
-                      full_name: Doria Schroeder
+                      full_name: German Rodriguez
       requestBody:
         content:
           application/json:
@@ -54,9 +54,9 @@ paths:
                 Default:
                   value:
                     message: Signed up successfully.
-                    token: eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmZDYzNGVjYS0zMTJkLTRjZmItOWQ0ZS03ZjBhZDMyNTE2NTMiLCJzdWIiOiJkNzJhMTdkNi03OWNjLTQzMDAtYjBhMC1mODQzNDViNTllNWYiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3NDY2NzIyNTAsImV4cCI6MTc0Njc1ODY1MH0.Na9_jqgj4e6Hy-cJ2CKlojSPehchZnG-Dp1tp4n0aec
+                    token: eyJhbGciOiJIUzI1NiJ9.eyJqdGkiOiJmNDE4MTMwYi0wN2Q1LTQyZTgtYmM1NS03NjVjM2Y5OTQ0YTIiLCJzdWIiOiIxNzE4ZDE0Zi05NGJlLTQ5Y2MtYmFjZS00NzY4ODQyODE5ZjIiLCJzY3AiOiJ1c2VyIiwiYXVkIjpudWxsLCJpYXQiOjE3NDY3NTUyNzgsImV4cCI6MTc0Njg0MTY3OH0.WKdlY9WYzKoJY8qsbz7OFQGaw2zG9cnaEdJ_ao0Ruk0
                     user:
-                      id: d72a17d6-79cc-4300-b0a0-f84345b59e5f
+                      id: 1718d14f-94be-49cc-bace-4768842819f2
                       avatar:
                         id: 
                         attachment_id: 
@@ -65,9 +65,9 @@ paths:
                       email: teste@teste
                       full_name: 
                     refresh_token:
-                      value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiJkNzJhMTdkNi03OWNjLTQzMDAtYjBhMC1mODQzNDViNTllNWYiLCJqdGkiOiJmZDYzNGVjYS0zMTJkLTRjZmItOWQ0ZS03ZjBhZDMyNTE2NTMifQ.L4ZOWN-IujTjvMwA4PM1wVQfxwB1PQsRwp3RlXWKeGU
+                      value: eyJhbGciOiJIUzI1NiJ9.eyJzdWIiOiIxNzE4ZDE0Zi05NGJlLTQ5Y2MtYmFjZS00NzY4ODQyODE5ZjIiLCJqdGkiOiJmNDE4MTMwYi0wN2Q1LTQyZTgtYmM1NS03NjVjM2Y5OTQ0YTIifQ.BJhIAlxe44ajNcrmT7eMTutDsa1YgBLB0Q61pa_jmZY
                       httponly: true
-                      expires: '2025-05-09T02:44:10.201Z'
+                      expires: '2025-05-10T01:47:58.802Z'
                       secure: false
       requestBody:
         content:
@@ -84,6 +84,43 @@ paths:
       responses:
         '200':
           description: Successful
+  "/api/v1/mentor/expertise_areas":
+    get:
+      summary: List Mentor Expertise Areas
+      tags:
+      - Mentor Expertise Areas
+      security:
+      - bearer_auth: []
+      parameters:
+      - name: search
+        in: query
+        schema:
+          type: string
+      responses:
+        '200':
+          description: Successful with search
+          content:
+            application/json:
+              examples:
+                Default:
+                  value:
+                    meta:
+                      current_page: 1
+                      total_pages: 1
+                      current_page_size: 50
+                      total: 1
+                    data:
+                    - id: f6d5a6b9-92f6-459f-b2b5-5dc178b19a48
+                      name: dummy
+        '401':
+          description: Unauthorized
+          content:
+            application/json:
+              examples:
+                Default:
+                  value:
+                    errors:
+                      auth: You need to sign in or sign up before continuing.
   "/api/v1/mentor/profiles/{id}":
     get:
       summary: Show Mentor Profile
@@ -106,19 +143,18 @@ paths:
                 Default:
                   value:
                     data:
-                      id: 64e9dee6-2da2-4da4-a791-bce4f7a5d38e
+                      id: 3de3b57c-af54-4f88-b381-49b8fcfa7fb7
                       availabilities: []
-                      bio: Porro dignissimos ipsa. Sit consequatur corrupti. Alias
-                        nihil ratione.
+                      bio: Quo nihil omnis. Ad ipsam beatae. Assumenda est qui.
                       client_profiles: []
                       expertise_areas: []
-                      headline: Principal Orchestrator
-                      hourly_rate: '39.92'
-                      linkedin_url: http://linkedin.com/kristen_smitham
+                      headline: Farming Agent
+                      hourly_rate: '64.12'
+                      linkedin_url: http://linkedin.com/tuan_mueller
                       profile_name: 
-                      rating: 7.99
+                      rating: 6.76
                       sessions: []
-                      years_of_experience: 9
+                      years_of_experience: 20
         '401':
           description: Unauthorized
           content:
@@ -138,7 +174,7 @@ paths:
                     errors:
                       base:
                       - Couldn't find Mentor::Profile with 'id'=not_an_id
-                    request_id: 2acafa42-cb64-412c-a8fa-0a90862fe0c4
+                    request_id: b4750b22-01ca-48cc-ae90-cd64d587bd8d
     put:
       summary: Update Mentor Profile
       tags:
@@ -160,7 +196,7 @@ paths:
                 Default:
                   value:
                     data:
-                      id: 5d89ad27-6e42-46b8-a295-5d69ccb448d0
+                      id: 41ee4319-0214-42f4-819c-51ac5386f511
                       availabilities: []
                       bio: Updated Bio
                       client_profiles: []
@@ -208,15 +244,15 @@ paths:
                 Default:
                   value:
                     data:
-                      id: 4e286ecf-3ddc-45b1-9a0a-32b231665707
+                      id: 444bbd16-60d6-4611-a719-94511fff22ee
                       avatar:
                         id: 
                         attachment_id: 
                         content_type: 
                         url: 
-                      cpf: '04530730263'
-                      email: jacquelyne.grady@legros.test
-                      full_name: Cristine Ruecker
+                      cpf: '09874384417'
+                      email: marylouise_langworth@weber.test
+                      full_name: Eleni Kreiger
         '401':
           description: Unauthorized
           content:
@@ -236,7 +272,7 @@ paths:
                     errors:
                       base:
                       - Couldn't find User with 'id'=not_an_id
-                    request_id: 755f18c4-4370-4c12-ba05-38d57c3eb76a
+                    request_id: abcb799b-3928-4c1f-ae9d-d037c7bfd425
     put:
       summary: Update User
       tags:
@@ -258,7 +294,7 @@ paths:
                 Default:
                   value:
                     data:
-                      id: 1a25520a-fcf7-4015-9b4b-4e8cce254c6b
+                      id: 2713f41d-f830-4d32-b43c-850f31af7c12
                       avatar:
                         id: 
                         attachment_id: 
@@ -277,7 +313,7 @@ paths:
                     errors:
                       email:
                       - is invalid
-                    request_id: 4677a2e7-bf72-430b-8df3-3c8708a9db09
+                    request_id: 2afb4ec1-41ef-4d11-8e2a-a8f6d7bd7b8a
         '401':
           description: Unauthorized
           content:
@@ -297,7 +333,7 @@ paths:
                     errors:
                       base:
                       - Couldn't find User with 'id'=not_an_id
-                    request_id: 1c6437dd-0a1c-49ed-97e8-790dd4811a81
+                    request_id: fb61c52c-559d-485a-a9fb-31e5afd9c3c2
       requestBody:
         content:
           application/json:
@@ -444,6 +480,20 @@ components:
                 type: string
               name:
                 type: string
+          responses:
+            index:
+              title: Mentor Expertise Areas Response
+              type: object
+              properties:
+                data:
+                  type: array
+                  items:
+                    "$ref": "#/components/schemas/v1/mentor/expertise_areas/_common"
+                meta:
+                  "$ref": "#/components/schemas/common/pagination_meta"
+              required:
+              - meta
+              - data
         profiles:
           _common:
             title: Mentor Profile
@@ -491,7 +541,7 @@ components:
               sessions:
                 type: array
                 items:
-                  "$ref": "#/components/schemas/v1/mentor/session"
+                  "$ref": "#/components/schemas/v1/mentor/session/_common"
               client_profiles:
                 type: array
                 items:

@@ -1,0 +1,19 @@
+{
+  "title": "Mentor Expertise Areas Response",
+  "type": "object",
+  "properties": {
+    "data": {
+      "type": "array",
+      "items": {
+        "$ref": "#/components/schemas/v1/mentor/expertise_areas/_common"
+      }
+    },
+    "meta": {
+      "$ref": "#/components/schemas/common/pagination_meta"
+    }
+  },
+  "required": [
+    "meta",
+    "data"
+  ]
+}
